@@ -105,13 +105,20 @@ public class MyMap implements Serializable {
         }
     }
 
+
     public void getFromFile(String fileName){
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName+".ser"))) {
             ArrayList<Element> deserializedMap = (ArrayList<Element>) ois.readObject();
+            for(Element el: deserializedMap){
+                ArrayList<String> vals = new ArrayList<>();
+                vals = el.getValues();
+                el.setValues(vals);
+            }
             setMyMap(deserializedMap);
-            System.out.println("Файл десериализован!");
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
     public void putInFile(String fileName){

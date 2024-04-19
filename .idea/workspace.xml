@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Поправлено, надо будет убрать пофторы значений">
-      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Интерфейса не хватает">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapOperations.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyNumberMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyNumberMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyWordMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyWordMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "betaWithRegex",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;betaWithRegex&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,7 +91,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713510067459</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Поправлено, надо будет убрать пофторы значений">
+      <option name="closed" value="true" />
+      <created>1713560185884</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713560185884</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Интерфейса не хватает">
+      <option name="closed" value="true" />
+      <created>1713560203628</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713560203628</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,7 +121,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="betaWithRegex" />
                       </list>
                     </value>
                   </entry>
@@ -124,9 +137,18 @@
     <MESSAGE value="Почти не изменена под keyvalRegex" />
     <MESSAGE value="Работает правильно конструктор" />
     <MESSAGE value="Поправлено, надо будет убрать пофторы значений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поправлено, надо будет убрать пофторы значений" />
+    <MESSAGE value="Интерфейса не хватает" />
+    <option name="LAST_COMMIT_MESSAGE" value="Интерфейса не хватает" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="mapMain.myMap" />

@@ -33,15 +33,7 @@ public class MyNumberMap extends MyMap
     public void setRegex(String regex) {
         this.regex = regex;
     }
-    public void getFromFile(String fileName){
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName+".ser"))) {
-            ArrayList<Element> deserializedMap = (ArrayList<Element>) ois.readObject();
-            setMyMap(deserializedMap);
-            System.out.println("Файл десериализован!");
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 
 }
