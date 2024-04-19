@@ -37,14 +37,7 @@ public class MyMap {
     {
         this.myMap.addAll(keyValues);
     }
-    MyMap(ArrayList<Element> keyValues, String keyRegex , String valueRegex)
-    {
-        this.myMap.addAll(keyValues);
 
-    }
-
-    String valueRegex;
-    String keyRegex;
     private ArrayList<Element> myMap = new ArrayList<Element>(0);
     public ArrayList<Element> getMyMap(){ return myMap; }
     public void setMyMap(ArrayList<Element> myMap) {
@@ -112,7 +105,7 @@ public class MyMap {
         {
             System.out.print(element.key + ": ");
             for (String value: element.values)
-                System.out.print(value + ", ");
+                System.out.print(value + "; ");
             System.out.print("\n");
         }
     }

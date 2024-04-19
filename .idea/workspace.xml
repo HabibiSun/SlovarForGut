@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SlovarForGut.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MapOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyNumberMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyWordMap.java" afterDir="false" />
+    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Почти не изменена под keyvalRegex">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyNumberMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyNumberMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyWordMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyWordMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -45,10 +44,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "betaWithRegex",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -68,6 +67,15 @@
       <option name="presentableId" value="Default" />
       <updated>1713336051866</updated>
     </task>
+    <task id="LOCAL-00001" summary="Почти не изменена под keyvalRegex">
+      <option name="closed" value="true" />
+      <created>1713442932459</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713442932459</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,26 +83,29 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Почти не изменена под keyvalRegex" />
+    <option name="LAST_COMMIT_MESSAGE" value="Почти не изменена под keyvalRegex" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/MyMap.java</url>
-          <line>35</line>
-          <properties class="MyMap" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="mapMain.myMap" />

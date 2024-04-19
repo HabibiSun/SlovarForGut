@@ -30,6 +30,11 @@ public class Main {
         MyMap mapMain = new MyMap(elems1);
         MyNumberMap mapNums = new MyNumberMap(elems1);
         MyWordMap wordMap = new MyWordMap(elems1);
-        System.out.println();
+        System.out.println("Весь");
+        mapMain.showMap();
+        System.out.println("Номера");
+        mapNums.showMap();
+        System.out.println("Строки");
+        wordMap.showMap();
     }
 }
