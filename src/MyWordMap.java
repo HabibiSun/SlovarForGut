@@ -9,12 +9,14 @@ public class MyWordMap extends MyMap {
         ArrayList<Element> revelantKeyValues = new ArrayList<>();
         for(Element element: keyValues){
             if(element.getKey().matches(regex)){
-                boolean isBlank = true;
-                for (String value : element.getValues()) {
-                    if (!value.isBlank())
-                        isBlank = false;
-                }
-                if (!isBlank)
+//                boolean isBlank = true;
+//                for (String value : element.getValues()) {
+//                    if (!value.isBlank())
+//                        isBlank = false;
+//                }
+//                if (!isBlank)
+//                    revelantKeyValues.add(element);
+                if(!element.getKey().isBlank())
                     revelantKeyValues.add(element);
             }
         }

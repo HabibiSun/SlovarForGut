@@ -13,6 +13,8 @@ public class MyMap {
             values.add(value);
             setValues(values);
         }
+
+
         private String key;
         private ArrayList<String> values = new ArrayList<String>(0);
 
@@ -76,7 +78,21 @@ public class MyMap {
             }
         myMap.add(newElement);
         System.out.println("Успешно создан ключ " + newElement.key);
-
+    }
+    public void addKeyValue(String key, ArrayList<String> values) throws Exception {
+        if(key.isBlank())
+            return;
+        for(String value: values){
+            if(value.isBlank()) values.remove(value);
+        }
+        for (Element element : myMap)
+            if (element.key.equalsIgnoreCase(key)) {
+                element.setValues(values);
+                System.out.println("Значения " + "добавлены к ключу " + key);
+                return;
+            }
+        myMap.add(new Element(key,values));
+        System.out.println("Успешно добавлен новый ключ " + key);
     }
     public void removeElementByKey(String key){
         for (Element element: myMap)

@@ -36,5 +36,10 @@ public class Main {
         mapNums.showMap();
         System.out.println("Строки");
         wordMap.showMap();
+        wordMap.removeElementByKey("hell");
+        wordMap.removeElementByKey("hel");
+        wordMap.addKeyValue("poch",values1 );
+        wordMap.showMap();
+
     }
 }
