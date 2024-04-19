@@ -1,8 +1,9 @@
+import java.io.*;
 import java.util.ArrayList;
 
-public class MyMap {
+public class MyMap implements Serializable {
 
-    public static class Element{
+    public static class Element implements Serializable{
         Element(String key, ArrayList<String> values) throws Exception {
             setKey(key);
             setValues(values);
@@ -20,7 +21,7 @@ public class MyMap {
 
         public void setValues(ArrayList<String> values) throws Exception {
             for(String value: values)
-                if(!value.isBlank() && value.matches("[а-яА-Я]+"))
+                if(!value.isBlank() && value.matches("[а-яА-Я]+") && !getValues().contains(value))
                     this.values.add(value);
             if(values.isEmpty()) throw new Exception("Нет валидных значений");
         }
@@ -35,6 +36,7 @@ public class MyMap {
             return key;
         }
     }
+    MyMap(){}
     MyMap(ArrayList<Element> keyValues)
     {
         this.myMap.addAll(keyValues);
@@ -46,26 +48,6 @@ public class MyMap {
         this.myMap = myMap;
     }
 
-    public void addValueToKey(String key, ArrayList<String> values){
-        // Словарь, где ключ - 4 символа и они буквы латинской раскладки
-//        if(key.matches("[a-zA-Z]{4}")){
-//            for (String s : values) {
-//                if (!s.isBlank())
-//                    addElementToMap(wordMap, key, s);
-//            }
-//        }
-//
-//        // Словарь, где ключ - 5 символов и они - цифры
-//        if(key.matches("[0-9]{5}")){
-//            for (String s : values) {
-//                if (!s.isBlank())
-//                    addElementToMap(numberMap, key, s);
-//            }
-//        }
-//        else{
-//            System.out.println("Неправильно задан ключ");
-//        }
-    }
 
     public void addElement(Element newElement) throws Exception {
         if(newElement.key.isBlank() || newElement.values.isEmpty())
@@ -107,9 +89,6 @@ public class MyMap {
     public ArrayList<String> getValuesByKey(String key){
         for (Element element: myMap)
             if (element.key.equalsIgnoreCase(key)){
-                System.out.print("Значения ключа " + key + ": ");
-                for(String value: element.values)
-                    System.out.print(value + " ");
                 return element.values;
             }
         System.out.println("Ключа нет в словаре");
@@ -123,6 +102,24 @@ public class MyMap {
             for (String value: element.values)
                 System.out.print(value + "; ");
             System.out.print("\n");
+        }
+    }
+
+    public void getFromFile(String fileName){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName+".ser"))) {
+            ArrayList<Element> deserializedMap = (ArrayList<Element>) ois.readObject();
+            setMyMap(deserializedMap);
+            System.out.println("Файл десериализован!");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void putInFile(String fileName){
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName +".ser"))) {
+            oos.writeObject(myMap);
+            System.out.println("Сериализовано!");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

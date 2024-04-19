@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class MyWordMap extends MyMap {
 
-
+    MyWordMap(){}
     MyWordMap(ArrayList<Element> keyValues) {
 
         super(keyValues);

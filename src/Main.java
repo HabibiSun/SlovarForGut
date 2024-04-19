@@ -1,45 +1,63 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        String key1 = "hi";
-        String key2 = "hell";
-        String key3 = "poch";
-        String key4 = "poc3";
-        String key5 = "12345";
-        String key6 = "32345";
 
-        ArrayList<String> values1 = new ArrayList<>();
-        values1.add("Привет");  values1.add("Здорово");
 
-        MyMap.Element el1 = new MyMap.Element(key1, values1);
-        MyMap.Element el2 = new MyMap.Element(key2, values1);
-        MyMap.Element el3 = new MyMap.Element(key3, values1);
-        MyMap.Element el4 = new MyMap.Element(key4, values1);
-        MyMap.Element el5 = new MyMap.Element(key5, values1);
-        MyMap.Element el6 = new MyMap.Element(key6, values1);
-        ArrayList<MyMap.Element> elems1 = new ArrayList<>();
-        elems1.add(el1);
-        elems1.add(el2);
-        elems1.add(el3);
-        elems1.add(el4);
-        elems1.add(el5);
-        elems1.add(el6);
+        MyMap mapMain = new MyMap();
+        MyNumberMap mapNums = new MyNumberMap();
+        MyWordMap wordMap = new MyWordMap();
 
-        MyMap mapMain = new MyMap(elems1);
-        MyNumberMap mapNums = new MyNumberMap(elems1);
-        MyWordMap wordMap = new MyWordMap(elems1);
-        System.out.println("Весь");
-        mapMain.showMap();
-        System.out.println("Номера");
-        mapNums.showMap();
-        System.out.println("Строки");
-        wordMap.showMap();
-        wordMap.removeElementByKey("hell");
-        wordMap.removeElementByKey("hel");
-        wordMap.addKeyValue("poch",values1 );
-        wordMap.showMap();
+        mapMain.getFromFile("mapMain");
+        mapNums.getFromFile("mapNums");
+        wordMap.getFromFile("wordMap");
+
+
+    }
+    public static String inputLine(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ваш выбор:");
+        if (scanner.hasNext()) {
+            String inp = scanner.nextLine();
+            scanner.close();
+            return inp;
+        }
+        scanner.close();
+        return inputLine();
+    }
+    public static void StartMenu(){
+        System.out.println("Выберите:\n" +
+                "1. Словарь со словами\n" +
+                "2. Словарь с цифрами\n" +
+                "3. Показать содержимое обоих словарей");
+        switch (inputLine()){
+            case "1":
+
+        }
+
+
+    }
+    public void showMapOperations(Object mapType){
+        boolean isWordMap = false;
+        if(mapType instanceof MyWordMap) isWordMap = true;
+        System.out.println("Выберите:\n" +
+                "1. Найти по ключу\n" +
+                "2. Добавить элемент\n" +
+                "3. Удалить элемент");
+
+        String opChoose = inputLine();
+        switch (opChoose){
+            case "1":
+                System.out.println("Введите ключ");
+                String key = inputLine();
+                if (isWordMap){
+                    if()
+                }
+                else()
+
+        }
 
     }
 }
