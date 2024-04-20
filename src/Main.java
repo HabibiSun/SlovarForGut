@@ -79,7 +79,7 @@ public class Main {
         }
 
     }
-    public static void find(Object map){
+    public static void find(Object map) throws Exception {
         System.out.println("Введите ключ");
         if(map instanceof MyWordMap){
             MyWordMap wMap = (MyWordMap) map;
@@ -89,6 +89,7 @@ public class Main {
                 System.out.println("Содержание словаря слов:");
                 wMap.showMap();
             }
+            showMapOperations(wMap);
         }
         else {
             MyNumberMap numMap = (MyNumberMap) map;
@@ -98,17 +99,20 @@ public class Main {
                 System.out.println("Содержание словаря чисел:");
                 numMap.showMap();
             }
+            showMapOperations(numMap);
         }
     }
-    public static void remove(Object map){
+    public static void remove(Object map) throws Exception {
         System.out.println("Введите ключ");
         if(map instanceof MyWordMap){
             MyWordMap wMap = (MyWordMap) map;
             wMap.removeElementByKey(inputLine());
+            showMapOperations(wMap);
         }
         else {
             MyNumberMap numMap = (MyNumberMap) map;
             numMap.removeElementByKey(inputLine());
+            showMapOperations(numMap);
         }
     }
     public static void add(Object map) throws Exception {
@@ -120,12 +124,13 @@ public class Main {
             MyWordMap wMap = (MyWordMap) map;
             if (!key.matches(wMap.getRegex()))
                 while(!key.matches(wMap.getRegex())){
-                    System.out.println("Ключ должен состоять из 4 латинский букв");
+                    System.out.println("Ключ должен состоять из 4 строчных латинский букв");
                     key = inputLine();
                 }
             System.out.println("Введите значения через пробел");
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split("")));
             wMap.addKeyValue(key, values);
+            showMapOperations(wMap);
         }
         else{
             MyNumberMap numMap = (MyNumberMap) map;
@@ -135,8 +140,9 @@ public class Main {
                     key = inputLine();
                 }
             System.out.println("Введите значения через пробел");
-            ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split("")));
+            ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             numMap.addKeyValue(key, values);
+            showMapOperations(numMap);
         }
     }
 

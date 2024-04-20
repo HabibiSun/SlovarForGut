@@ -22,7 +22,7 @@ public class MyWordMap extends MyMap {
         }
         setMyMap(revelantKeyValues);
     }
-    private String regex = "[a-zA-Z]{4}";
+    private String regex = "[a-z]{4}";
     public String getRegex() {
         return regex;
     }
