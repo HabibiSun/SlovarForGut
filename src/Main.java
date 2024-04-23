@@ -43,6 +43,7 @@ public class Main {
                 startMenu();
                 break;
             }
+            default: startMenu();
         }
 
 
@@ -136,6 +137,7 @@ public class Main {
             System.out.println("Введите значения через пробел");
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             ((MyWordMap)map).addKeyValue(key, values);
+            ((MyWordMap)map).putInFile("mapWord");
             showMapOperations(map);
         }
         else{
@@ -150,6 +152,7 @@ public class Main {
             System.out.println("Введите значения через пробел");
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             ((MyNumberMap)map).addKeyValue(key, values);
+            ((MyNumberMap)map).putInFile("mapNums");
             showMapOperations(map);
         }
     }
