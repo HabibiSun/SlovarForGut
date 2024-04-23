@@ -10,8 +10,7 @@ public class Main {
     }
     public static String inputLine(){
         Scanner scanner = new Scanner(System.in);
-        String inp = scanner.nextLine();
-        return inp;
+        return scanner.nextLine();
     }
     public static void startMenu() throws Exception {
         MyMap mapMain = new MyMap();
@@ -54,7 +53,8 @@ public class Main {
                 "1. Найти по ключу\n" +
                 "2. Добавить элемент\n" +
                 "3. Удалить элемент\n" +
-                "4. Вернуться к выбору словаря");
+                "4. Вернуться к выбору словаря\n" +
+                "5. Посмотреть содержимое");
         String opChoose = inputLine();
         switch (opChoose){
             case "1":{
@@ -73,6 +73,10 @@ public class Main {
                 startMenu();
                 break;
             }
+            case "5":{
+                show(map);
+                break;
+            }
             default:{
                 showMapOperations(map);
             }
@@ -82,67 +86,71 @@ public class Main {
     public static void find(Object map) throws Exception {
         System.out.println("Введите ключ");
         if(map instanceof MyWordMap){
-            MyWordMap wMap = (MyWordMap) map;
-            ArrayList<String> values = new ArrayList<>();
-            values = wMap.getValuesByKey(inputLine());
+            ArrayList<String> values;
+            values = ((MyWordMap)map).getValuesByKey(inputLine());
             if(!values.isEmpty()){
                 System.out.println("Содержание словаря слов:");
-                wMap.showMap();
+                ((MyWordMap)map).showMap();
             }
-            showMapOperations(wMap);
+            showMapOperations(map);
         }
         else {
-            MyNumberMap numMap = (MyNumberMap) map;
-            ArrayList<String> values = new ArrayList<>();
-            values = numMap.getValuesByKey(inputLine());
+            ArrayList<String> values;
+            values = ((MyNumberMap)map).getValuesByKey(inputLine());
             if(!values.isEmpty()){
                 System.out.println("Содержание словаря чисел:");
-                numMap.showMap();
+                ((MyNumberMap)map).showMap();
             }
-            showMapOperations(numMap);
+            showMapOperations(map);
         }
     }
     public static void remove(Object map) throws Exception {
         System.out.println("Введите ключ");
         if(map instanceof MyWordMap){
-            MyWordMap wMap = (MyWordMap) map;
-            wMap.removeElementByKey(inputLine());
-            showMapOperations(wMap);
+            ((MyWordMap)map).removeElementByKey(inputLine());
+            showMapOperations(map);
         }
         else {
             MyNumberMap numMap = (MyNumberMap) map;
-            numMap.removeElementByKey(inputLine());
+            ((MyNumberMap)map).removeElementByKey(inputLine());
             showMapOperations(numMap);
         }
     }
+    public static void show(Object map){
+        boolean isWordMap = map instanceof MyWordMap;
+        if(isWordMap) ((MyWordMap)map).showMap();
+        else((MyNumberMap)map).showMap();
+    }
     public static void add(Object map) throws Exception {
-        boolean isWordMap = false;
-        if(map instanceof MyWordMap) isWordMap = true;
+        boolean isWordMap = map instanceof MyWordMap;
         System.out.println("Введите ключ");
         String key = inputLine();
         if (isWordMap){
-            MyWordMap wMap = (MyWordMap) map;
-            if (!key.matches(wMap.getRegex()))
-                while(!key.matches(wMap.getRegex())){
+            if (!key.matches(((MyWordMap)map).getRegex())){
+                String regex = ((MyWordMap)map).getRegex();
+                while(!key.matches(regex)){
                     System.out.println("Ключ должен состоять из 4 строчных латинский букв");
                     key = inputLine();
                 }
+            }
             System.out.println("Введите значения через пробел");
-            ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split("")));
-            wMap.addKeyValue(key, values);
-            showMapOperations(wMap);
+            ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
+            ((MyWordMap)map).addKeyValue(key, values);
+            showMapOperations(map);
         }
         else{
-            MyNumberMap numMap = (MyNumberMap) map;
-            if (!key.matches(numMap.getRegex()))
-                while(!key.matches(numMap.getRegex())){
+            if (!key.matches(((MyNumberMap)map).getRegex()))
+            {
+                String regex = ((MyNumberMap)map).getRegex();
+                while(!key.matches(regex)){
                     System.out.println("Ключ должен состоять из 5 цифр");
                     key = inputLine();
                 }
+            }
             System.out.println("Введите значения через пробел");
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
-            numMap.addKeyValue(key, values);
-            showMapOperations(numMap);
+            ((MyNumberMap)map).addKeyValue(key, values);
+            showMapOperations(map);
         }
     }
 
