@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Исправлено добавление и удаление, осталось добавить серилизацию при изменении и вызов менюшки при другом выборе">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapNums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/mapNums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyNumberMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyNumberMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyWordMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyWordMap.java" afterDir="false" />
-    </list>
+    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Исправлено добавление и удаление, осталось добавить серилизацию при изменении и вызов менюшки при другом выборе" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +41,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "betaWithRegex",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "inlay.hints"
   }
