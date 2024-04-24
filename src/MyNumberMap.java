@@ -27,6 +27,22 @@ public class MyNumberMap extends MyMap
         }
         setMyMap(revelantKeyValues);
     }
+    @Override
+    public void getFromFile(String fileName){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName+".ser"))) {
+            ArrayList<Element> deserializedMap = (ArrayList<Element>) ois.readObject();
+            ArrayList<Element> NormalizedMap = new ArrayList<>();
+            for(Element el: deserializedMap){
+                if(el.getKey().matches(regex))
+                    NormalizedMap.add(el);
+            }
+            setMyMap(NormalizedMap);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
     public String getRegex() {
         return regex;
     }

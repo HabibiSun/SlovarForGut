@@ -23,7 +23,6 @@ public class MyMap implements Serializable {
             for(String value: values)
                 if(!value.isBlank() && value.matches("[а-яА-Я]+") && !getValues().contains(value))
                     this.values.add(value);
-            if(values.isEmpty()) throw new Exception("Нет валидных значений");
         }
         public ArrayList<String> getValues(){
             return values;

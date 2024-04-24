@@ -93,7 +93,6 @@ public class Main {
                 System.out.println("Содержание словаря слов:");
                 ((MyWordMap)map).showMap();
             }
-            showMapOperations(map);
         }
         else {
             ArrayList<String> values;
@@ -102,25 +101,25 @@ public class Main {
                 System.out.println("Содержание словаря чисел:");
                 ((MyNumberMap)map).showMap();
             }
-            showMapOperations(map);
         }
+        showMapOperations(map);
     }
     public static void remove(Object map) throws Exception {
         System.out.println("Введите ключ");
         if(map instanceof MyWordMap){
             ((MyWordMap)map).removeElementByKey(inputLine());
-            showMapOperations(map);
         }
         else {
             MyNumberMap numMap = (MyNumberMap) map;
             ((MyNumberMap)map).removeElementByKey(inputLine());
-            showMapOperations(numMap);
         }
+        showMapOperations(map);
     }
-    public static void show(Object map){
+    public static void show(Object map) throws Exception {
         boolean isWordMap = map instanceof MyWordMap;
         if(isWordMap) ((MyWordMap)map).showMap();
         else((MyNumberMap)map).showMap();
+        showMapOperations(map);
     }
     public static void add(Object map) throws Exception {
         boolean isWordMap = map instanceof MyWordMap;
@@ -138,7 +137,7 @@ public class Main {
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             ((MyWordMap)map).addKeyValue(key, values);
             ((MyWordMap)map).putInFile("mapWord");
-            showMapOperations(map);
+
         }
         else{
             if (!key.matches(((MyNumberMap)map).getRegex()))
@@ -153,8 +152,9 @@ public class Main {
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             ((MyNumberMap)map).addKeyValue(key, values);
             ((MyNumberMap)map).putInFile("mapNums");
-            showMapOperations(map);
+
         }
+        showMapOperations(map);
     }
 
 }
