@@ -123,7 +123,6 @@ public class MyMap implements Serializable {
     public void putInFile(String fileName){
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName +".ser"))) {
             oos.writeObject(myMap);
-            System.out.println("Сериализовано!");
         } catch (IOException e) {
             e.printStackTrace();
         }
