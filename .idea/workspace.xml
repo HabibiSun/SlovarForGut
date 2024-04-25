@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Исправлено добавление и удаление, осталось добавить серилизацию при изменении и вызов менюшки при другом выборе" />
+    <list default="true" id="db6b9d52-8f31-46a4-96bf-23c54832e603" name="Changes" comment="Рабочая версия">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,16 +38,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -118,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713861612174</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Рабочая версия">
+      <option name="closed" value="true" />
+      <created>1713944052371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713944052371</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,7 +161,8 @@
     <MESSAGE value="Интерфейса не хватает" />
     <MESSAGE value="Изменить загрузку из файла, чтобы соответствовали регулярке, изменить методы +-, дабы они изменяли список" />
     <MESSAGE value="Исправлено добавление и удаление, осталось добавить серилизацию при изменении и вызов менюшки при другом выборе" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлено добавление и удаление, осталось добавить серилизацию при изменении и вызов менюшки при другом выборе" />
+    <MESSAGE value="Рабочая версия" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рабочая версия" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
