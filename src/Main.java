@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -26,12 +27,22 @@ public class Main {
                 "2. Словарь с цифрами\n" +
                 "3. Показать содержимое обоих словарей");
 
+
+
         switch (inputLine()){
             case "1": {
+                String mapPath = getFilePath();
+                while(mapPath.isBlank()) { mapPath = getFilePath(); }
+                System.out.println("Действия с " + mapPath+".ser");
+                wordMap.getFromFile(mapPath);
                 showMapOperations(wordMap);
                 break;
             }
             case "2":{
+                String mapPath = getFilePath();
+                while(mapPath.isBlank()) { mapPath = getFilePath(); }
+                System.out.println("Действия с " + mapPath +".ser");
+                numMap.getFromFile(mapPath);
                 showMapOperations(numMap);
                 break;
             }
@@ -50,6 +61,7 @@ public class Main {
     }
     public static void showMapOperations(Object map) throws Exception {
         System.out.println();
+
         System.out.println("Выберите:\n" +
                 "1. Найти по ключу\n" +
                 "2. Добавить элемент\n" +
@@ -136,7 +148,7 @@ public class Main {
             System.out.println("Введите значения через пробел");
             ArrayList<String> values = new ArrayList<>(Arrays.asList(inputLine().split(" ")));
             ((MyWordMap)map).addKeyValue(key, values);
-            ((MyWordMap)map).putInFile("mapWord");
+            ((MyWordMap)map).putInFile("wordMap");
 
         }
         else{
@@ -157,4 +169,12 @@ public class Main {
         showMapOperations(map);
     }
 
+    public static String getFilePath(){
+        System.out.println("Введите имя файла в .ser формате без (.ser)");
+        String mapPath = inputLine() ;
+        File f = new File(mapPath+ ".ser");
+        if(!f.exists() || f.isDirectory()){
+            return ""; }
+        return  mapPath;
+    }
 }
